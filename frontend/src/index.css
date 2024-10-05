@@ -6,7 +6,7 @@
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100px;
@@ -47,8 +47,7 @@
 
 .main-content {
   flex: 1;
-  padding: 20px;
-  margin-left: 100px; /* add margin to main content */
+  margin-left: 120px; /* add margin to main content */
 }
 
 .header {
@@ -62,29 +61,40 @@
   padding: 20px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 10px;
-  justify-items: center;
+.gallery-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.gallery-item {
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.ingredients-column,
+.expiry-column {
+  width: 45%;
+}
+
+.gallery-item,
+.expiry-item {
+  margin-bottom: 20px;
 }
 
 .gallery-img {
-  width: 100%;
-  height: auto;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  margin-right: 10px;
 }
 
-.gallery-item:hover .gallery-img {
-  transform: scale(1.1);
+.ingredients-column h2,
+.expiry-column h2 {
+  margin-bottom: 10px;
+}
+
+.gallery-item p {
+  margin-top: 5px;
+}
+
+.expiry-item p {
+  margin: 5px 0;
 }
 
 .fridge {

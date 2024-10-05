@@ -1,41 +1,65 @@
 import PropTypes from "prop-types";
 
-const Gallery = ({ images }) => {
+const Gallery = ({ items }) => {
   return (
-    <div className="gallery">
-      {images.map((image, index) => (
-        <div className="gallery-item" key={index}>
-          <img
-            src={image}
-            alt={`Gallery item ${index + 1}`}
-            className="gallery-img"
-          />
-        </div>
-      ))}
+    <div className="gallery-container">
+      <div className="ingredients-column">
+        <h2>Ingredients</h2>
+        {items.map((item, index) => (
+          <div className="gallery-item" key={index}>
+            <img src={item.image} alt={item.name} className="gallery-img" />
+            <p>{item.name}</p>
+          </div>
+        ))}
+      </div>
+      <div className="expiry-column">
+        <h2>Estimated Expiry</h2>
+        {items.map((item, index) => (
+          <div className="expiry-item" key={index}>
+            <p>{item.expiry}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 Gallery.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 // Main App component with images array
-function App() {
-  const images = [
-    "https://via.placeholder.com/300",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/500",
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/700",
+function Fridge() {
+  const items = [
+    {
+      name: "Milk",
+      image: "https://via.placeholder.com/150",
+      expiry: "3 days",
+    },
+    {
+      name: "Eggs",
+      image: "https://via.placeholder.com/150",
+      expiry: "5 days",
+    },
+    {
+      name: "Cheese",
+      image: "https://via.placeholder.com/150",
+      expiry: "7 days",
+    },
+    {
+      name: "Yogurt",
+      image: "https://via.placeholder.com/150",
+      expiry: "10 days",
+    },
   ];
 
   return (
     <div className="App">
       <h2>Fridge</h2>
-      <Gallery images={images} />
+      <p>Add items to your fridge</p>
+      <Gallery items={items} />
     </div>
   );
 }
 
-export default App;
+export default Fridge;
