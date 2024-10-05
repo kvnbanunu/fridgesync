@@ -23,7 +23,6 @@
 
 .nav ul {
   border-top: 1px solid #ddd;
-  margin-top: ;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -66,43 +65,38 @@
 
 .gallery-container {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.ingredients-column,
-.expiry-column {
-  width: 45%;
-}
-
-.gallery-item,
-.expiry-item {
-  margin-bottom: 20px;
-}
-
-.gallery-img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  margin-right: 10px;
-}
-
-.ingredients-column h2,
-.expiry-column h2 {
-  margin-bottom: 10px;
-}
-
-.gallery-item {
-  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.gallery-item p {
-  margin-top: 5px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 40px;
 }
 
-.expiry-item p {
-  margin: 5px 0;
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredient-name-large {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0;
+}
+
+.expiry-date-large {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+.gallery-img-large {
+  width: 120px;
+  height: 120px;
 }
 
 .fridge {
@@ -119,25 +113,25 @@
 
 .carousel {
   position: relative;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin: auto;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  min-width: 20%; 
+  min-width: 20%;
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
 }
 
 .carousel img {
-  width: 100%; 
+  width: 100%;
   height: auto;
   border-radius: 8px;
 }
@@ -150,7 +144,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  z-index: 10; 
+  z-index: 10;
 }
 
 .prev {

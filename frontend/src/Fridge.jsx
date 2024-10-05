@@ -3,20 +3,16 @@ import PropTypes from "prop-types";
 const Gallery = ({ items }) => {
   return (
     <div className="gallery-container">
-      <div className="ingredients-column">
-        <h2>Ingredients</h2>
+      <div className="grid-container">
         {items.map((item, index) => (
-          <div className="gallery-item" key={index}>
-            <img src={item.image} alt={item.name} className="gallery-img" />
-            <p>{item.name}</p>
-          </div>
-        ))}
-      </div>
-      <div className="expiry-column">
-        <h2>Estimated Expiry</h2>
-        {items.map((item, index) => (
-          <div className="expiry-item" key={index}>
-            <p>{item.expiry}</p>
+          <div className="grid-item" key={index}>
+            <img
+              src={item.image}
+              alt={item.name}
+              className="gallery-img-large"
+            />
+            <p className="ingredient-name-large">{item.name}</p>
+            <p className="expiry-date-large">Expiry: {item.expiry}</p>
           </div>
         ))}
       </div>
