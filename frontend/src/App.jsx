@@ -1,15 +1,15 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+// src/App.jsx
+import React from "react";
 
 function App() {
   return (
     <div className="app-container">
-      <Header />
       <Nav />
-      <Body />
-      <Footer />
+      <div className="main-content">
+        <Header />
+        <Body />
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -25,6 +25,7 @@ function Header() {
 function Nav() {
   return (
     <nav className="nav">
+      <h2 className="nav-title">FridgeSync</h2>
       <ul>
         <li>
           <a href="#">Home</a>
