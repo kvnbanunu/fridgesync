@@ -1,72 +1,71 @@
 /* inline styles */
-<style>
-  .app-container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-  }
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
 
-  .nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100vh;
-    background-color: #f0f0f0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .nav ul {
-    border-top: 1px solid #ddd;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+.nav ul {
+  border-top: 1px solid #ddd;
+  margin-top: ;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .nav li {
-    margin-bottom: 10px;
-  }
+.nav li {
+  margin-bottom: 10px;
+}
 
-  .nav a {
-    color: #337ab7;
-    text-decoration: none;
-    padding: 10px 35px;
-    display: block;
-    background-color: transparent;
-    border-radius: 0;
-  }
-  
-  .nav a:hover {
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.nav a {
+  color: #337ab7;
+  text-decoration: none;
+  padding: 10px 35px;
+  display: block;
+  background-color: transparent;
+  border-radius: 0;
+}
 
-  .main-content {
-    flex: 1;
-    padding: 20px;
-    margin-left: 100px; /* add margin to main content */
-  }
+.nav a:hover {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 100px; /* add margin to main content */
+}
 
-  .body {
-    padding: 20px;
-  }
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-  .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    clear: both;
-  }
-</style>
+.body {
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  clear: both;
+}
