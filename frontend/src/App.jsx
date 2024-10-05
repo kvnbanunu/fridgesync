@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app-container">
+      <Header />
+      <Nav />
+      <Body />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+function Header() {
+  return (
+    <header className="header">
+      <h1>My React App</h1>
+    </header>
+  );
+}
+
+function Nav() {
+  return (
+    <nav className="nav">
+      <ul>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+function Body() {
+  return (
+    <main className="body">
+      <h2>Welcome to my React app!</h2>
+      <p>This is a basic React page with a header, nav, body, and footer.</p>
+    </main>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>&copy; 2023 My React App</p>
+    </footer>
+  );
+}
+
+export default App;
