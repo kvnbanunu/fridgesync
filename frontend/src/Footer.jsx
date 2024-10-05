@@ -1,8 +1,7 @@
-
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; 2023 My React App</p>
+      <p>&copy; 2024 Storm Hacks</p>
     </footer>
   );
 }
