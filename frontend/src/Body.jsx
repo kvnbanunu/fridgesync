@@ -1,5 +1,6 @@
 import Fridge from "./Fridge";
 import Recipes from "./Recipes";
+import CarouselComponent from './Carousel'
 
 function Body() {
   return (
@@ -8,6 +9,7 @@ function Body() {
       <p>This is a basic React page with a header, nav, body, and footer.</p>
       <Fridge></Fridge>
       <Recipes></Recipes>
+      <CarouselComponent></CarouselComponent>
     </main>
   );
 }
