@@ -20,6 +20,7 @@
   }
 
   .nav ul {
+    border-top: 1px solid #ddd;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -32,6 +33,16 @@
   .nav a {
     color: #337ab7;
     text-decoration: none;
+    padding: 10px 35px;
+    display: block;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  
+  .nav a:hover {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .main-content {
