@@ -28,24 +28,54 @@ Gallery.propTypes = {
 function Fridge() {
   const items = [
     {
-      name: "Milk",
-      image: "https://via.placeholder.com/150",
-      expiry: "3 days",
+      name: "Apples",
+      image: "https://example.com/apple.jpg",
+      expiry: "2023-03-15",
+    },
+    {
+      name: "Bananas",
+      image: "https://example.com/banana.jpg",
+      expiry: "2023-03-10",
+    },
+    {
+      name: "Carrots",
+      image: "https://example.com/carrot.jpg",
+      expiry: "2023-03-20",
+    },
+    {
+      name: "Greek Yogurt",
+      image: "https://example.com/yogurt.jpg",
+      expiry: "2023-03-12",
     },
     {
       name: "Eggs",
-      image: "https://via.placeholder.com/150",
-      expiry: "5 days",
+      image: "https://example.com/eggs.jpg",
+      expiry: "2023-03-18",
     },
     {
-      name: "Cheese",
-      image: "https://via.placeholder.com/150",
-      expiry: "7 days",
+      name: "Hummus",
+      image: "https://example.com/hummus.jpg",
+      expiry: "2023-03-15",
     },
     {
-      name: "Yogurt",
-      image: "https://via.placeholder.com/150",
-      expiry: "10 days",
+      name: "Mixed Nuts",
+      image: "https://example.com/nuts.jpg",
+      expiry: "2023-06-01",
+    },
+    {
+      name: "Orange Juice",
+      image: "https://example.com/orange-juice.jpg",
+      expiry: "2023-03-12",
+    },
+    {
+      name: "Pineapple",
+      image: "https://example.com/pineapple.jpg",
+      expiry: "2023-03-18",
+    },
+    {
+      name: "Spinach",
+      image: "https://example.com/spinach.jpg",
+      expiry: "2023-03-20",
     },
   ];
 
