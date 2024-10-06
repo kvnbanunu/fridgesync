@@ -1,6 +1,7 @@
 import Fridge from "./Fridge";
+import Text from "./Text";
 import Recipes from "./Recipes";
-import CarouselComponent from './Carousel'
+import CarouselComponent from "./Carousel";
 
 function Body() {
   return (
