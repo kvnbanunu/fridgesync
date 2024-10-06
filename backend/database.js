@@ -11,8 +11,8 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS user (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        username TEXT,
-        password TEXT,
+        username TEXT NOT NULL,
+        password TEXT NOT NULL
     )`);
 
     db.run(`CREATE TABLE IF NOT EXISTS item (
@@ -31,7 +31,7 @@ db.serialize(() => {
         items BLOB
     )`);
     
-    db.run(`CREATE TABLE IF NOT EXISTS user-recipe (
+    db.run(`CREATE TABLE IF NOT EXISTS userrecipe (
         userid INTEGER,
         recipeid INTEGER,
         FOREIGN KEY (userid) REFERENCES user(id),
