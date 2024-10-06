@@ -120,44 +120,56 @@
 
 .carousel {
   position: relative;
-  max-width: 1000px;
-  margin: auto;
+  width: 100%;
+  height: 600px;
   overflow: hidden;
 }
 
 .carousel-inner {
-  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  min-width: 20%;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.carousel-item.active {
+  transform: translateX(0) !important;
 }
 
 .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
   font-size: 24px;
   cursor: pointer;
-  z-index: 10;
 }
 
-.prev {
-  left: 10px;
+.carousel-control.prev {
+  left: 0;
 }
 
-.next {
-  right: 10px;
+.carousel-control.next {
+  right: 0;
+}
+
+.item {
+  margin: 0px;
+}
+
+.recipe-image {
+  width: 50%;
+  height: auto;
 }
