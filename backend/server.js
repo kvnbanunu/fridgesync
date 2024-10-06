@@ -188,9 +188,9 @@ app.get('/insertdummydata', (req, res) => {
 app.post('/insertitem', (req, res) => {
     let itemid;
     db.run(`INSERT OR IGNORE INTO item (name, category) VALUES (?, ?)`, [req.body.name, req.body.category]);
-    db.get(`SELECT id FROM item WHERE name = ?`, [req.body.name], (err, id) => {
+    await db.get(`SELECT id FROM item WHERE name = ?`, [req.body.name], (err, item) => {
         if (err) throw err;
-        itemid = id;
+        itemid = item.id;
     });
     db.run(`INSERT INTO useritem (userid, itemid, quantity, expirydate) VALUES (?, ?, ?, ?)`,
         [1, itemid, req.body.quantity, req.body.expirydate]);
