@@ -193,7 +193,7 @@ app.post('/insertitem', (req, res) => {
         itemid = id;
     });
     db.run(`INSERT INTO useritem (userid, itemid, quantity, expirydate) VALUES (?, ?, ?, ?)`,
-        [req.session.id, itemid, req.body.quantity, req.body.expirydate]);
+        [1, itemid, req.body.quantity, req.body.expirydate]);
     res.json({ message: 'Added item successfully'});
 })
 
