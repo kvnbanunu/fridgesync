@@ -1,6 +1,6 @@
 const db = require('../database');
 
-exports.getUserByUsername = (email, callback) => {
+exports.getUserByUsername = (username, callback) => {
     const query = `SELECT * FROM user WHERE username = ?`;
     db.get(query, [username], (err, user) => {
         if (err) {
