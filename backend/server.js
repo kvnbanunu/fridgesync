@@ -90,12 +90,12 @@ app.get('/', (req, res) => {
 });
 
 // Get all your items in the fridge
-app.get('/fridgeitems', isAuthenticated, (req, res) => {
+app.get('/fridgeitems', (req, res) => {
     const query = `SELECT * FROM useritem
     INNER JOIN item ON item.id = useritem.itemid
     WHERE userid = ?
     ORDER BY quantity ASC`;
-    db.all(query, [req.session.id], (err, rows) => {
+    db.all(query, [1], (err, rows) => {
         if (err) {
             throw err;
         }
@@ -103,14 +103,14 @@ app.get('/fridgeitems', isAuthenticated, (req, res) => {
     });
 });
 
-app.get('/recipeswithingredients', isAuthenticated, (req, res) => {
+app.get('/recipeswithingredients', (req, res) => {
     const query = `SELECT recipe.name recipe, recipeid, quantity, item.name item 
     FROM userrecipe
     LEFT JOIN recipe ON recipe.id = userrecipe.recipeid
     LEFT JOIN recipeitems ON recipeitems.recipeid = userrecipe.recipeid
     LEFT JOIN item ON item.id = recipeitems.itemid
     WHERE userid = ?`;
-    db.all(query, [req.session.id], (err, rows) => {
+    db.all(query, [1], (err, rows) => {
         if (err) {
             throw err;
         }
@@ -118,11 +118,11 @@ app.get('/recipeswithingredients', isAuthenticated, (req, res) => {
     });
 });
 
-app.get('/recipes', isAuthenticated, (req, res) => {
+app.get('/recipes', (req, res) => {
     const query = `SELECT * FROM userrecipe
     INNER JOIN recipe ON recipe.id = userrecipe.recipeid
     WHERE userid = ?`;
-    db.all(query, [req.session.id], (err, rows) => {
+    db.all(query, [1], (err, rows) => {
         if (err) throw err;
         res.json(rows);
     });
@@ -130,14 +130,14 @@ app.get('/recipes', isAuthenticated, (req, res) => {
 
 // So the idea for this is a button on either your fridge or recipes that says "Recommend me a recipe!"
 // And this will take into consideration what you got then populate the your recipes.
-app.get('/recommendrecipes', isAuthenticated, async (req, res) => {
+app.get('/recommendrecipes', async (req, res) => {
     try {
         let itemprompt = '';
         const query = `SELECT item.name name, quantity
         FROM useritem
         INNER JOIN item ON item.id = useritem.itemid
         WHERE userid = ?`
-        db.each(query, [req.session.id], (err, row) => {
+        db.each(query, [1], (err, row) => {
             if (err) {
                 throw(err);
             }
@@ -185,7 +185,7 @@ app.get('/insertdummydata', (req, res) => {
     res.send('Hopefully the database was populated');
 })
 
-app.post('/insertitem', isAuthenticated, (req, res) => {
+app.post('/insertitem', (req, res) => {
     let itemid;
     db.run(`INSERT OR IGNORE INTO item (name, category) VALUES (?, ?)`, [req.body.name, req.body.category]);
     db.get(`SELECT id FROM item WHERE name = ?`, [req.body.name], (err, id) => {
